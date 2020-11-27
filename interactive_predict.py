@@ -31,7 +31,7 @@ class InteractivePredictor:
         while True:
             print(
                 'Modify the file: "%s" and press any key when ready, or "q" / "quit" / "exit" to exit' % input_filename)
-            user_input = input()
+            user_input = "y"
             if user_input.lower() in self.exit_keywords:
                 print('Exiting...')
                 return
@@ -55,3 +55,4 @@ class InteractivePredictor:
                 if self.config.EXPORT_CODE_VECTORS:
                     print('Code vector:')
                     print(' '.join(map(str, raw_prediction.code_vector)))
+            break

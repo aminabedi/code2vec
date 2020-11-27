@@ -1,8 +1,12 @@
+print("HERE")
 from vocabularies import VocabType
+print(1)
 from config import Config
+print(2)
 from interactive_predict import InteractivePredictor
+print(3)
 from model_base import Code2VecModelBase
-
+print("GO")
 
 def load_model_dynamically(config: Config) -> Code2VecModelBase:
     assert config.DL_FRAMEWORK in {'tensorflow', 'keras'}
@@ -14,11 +18,12 @@ def load_model_dynamically(config: Config) -> Code2VecModelBase:
 
 
 if __name__ == '__main__':
+    print("Here we go")
     config = Config(set_defaults=True, load_from_args=True, verify=True)
 
     model = load_model_dynamically(config)
     config.log('Done creating code2vec model')
-
+    print("HERE WE ARE", config.__dict__)
     if config.is_training:
         model.train()
     if config.SAVE_W2V is not None:
