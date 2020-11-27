@@ -1,0 +1,96 @@
+/home/aminabd/scratch/code2vec
+2020-11-26 06:16:40.101251: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-11-26 06:16:40.119751: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2095190000 Hz
+2020-11-26 06:16:40.120266: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x2501bf0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-11-26 06:16:40.120755: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+HERE
+1
+2
+3
+GO
+Here we go
+2020-11-26 06:16:40,121 INFO     
+2020-11-26 06:16:40,122 INFO     
+2020-11-26 06:16:40,122 INFO     ---------------------------------------------------------------------
+2020-11-26 06:16:40,122 INFO     ---------------------------------------------------------------------
+2020-11-26 06:16:40,122 INFO     ---------------------- Creating code2vec model ----------------------
+2020-11-26 06:16:40,122 INFO     ---------------------------------------------------------------------
+2020-11-26 06:16:40,122 INFO     ---------------------------------------------------------------------
+2020-11-26 06:16:40,122 INFO     Checking number of examples ...
+2020-11-26 06:16:40,122 INFO     ---------------------------------------------------------------------
+2020-11-26 06:16:40,122 INFO     ----------------- Configuration - Hyper Parameters ------------------
+2020-11-26 06:16:40,123 INFO     CODE_VECTOR_SIZE                          384
+2020-11-26 06:16:40,123 INFO     CSV_BUFFER_SIZE                           104857600
+2020-11-26 06:16:40,123 INFO     DEFAULT_EMBEDDINGS_SIZE                   128
+2020-11-26 06:16:40,123 INFO     DL_FRAMEWORK                              tensorflow
+2020-11-26 06:16:40,123 INFO     DROPOUT_KEEP_RATE                         0.75
+2020-11-26 06:16:40,123 INFO     EXPORT_CODE_VECTORS                       False
+2020-11-26 06:16:40,124 INFO     LOGS_PATH                                 None
+2020-11-26 06:16:40,124 INFO     MAX_CONTEXTS                              200
+2020-11-26 06:16:40,124 INFO     MAX_PATH_VOCAB_SIZE                       911417
+2020-11-26 06:16:40,124 INFO     MAX_TARGET_VOCAB_SIZE                     261245
+2020-11-26 06:16:40,124 INFO     MAX_TOKEN_VOCAB_SIZE                      1301136
+2020-11-26 06:16:40,124 INFO     MAX_TO_KEEP                               10
+2020-11-26 06:16:40,124 INFO     MODEL_LOAD_PATH                           /home/aminabd/scratch/code2vec/../models/java14_model/saved_model_iter8.release
+2020-11-26 06:16:40,124 INFO     MODEL_SAVE_PATH                           None
+2020-11-26 06:16:40,124 INFO     NUM_BATCHES_TO_LOG_PROGRESS               100
+2020-11-26 06:16:40,124 INFO     NUM_TEST_EXAMPLES                         0
+2020-11-26 06:16:40,125 INFO     NUM_TRAIN_BATCHES_TO_EVALUATE             1800
+2020-11-26 06:16:40,125 INFO     NUM_TRAIN_EPOCHS                          20
+2020-11-26 06:16:40,125 INFO     NUM_TRAIN_EXAMPLES                        0
+2020-11-26 06:16:40,125 INFO     PATH_EMBEDDINGS_SIZE                      128
+2020-11-26 06:16:40,125 INFO     PREDICT                                   True
+2020-11-26 06:16:40,125 INFO     READER_NUM_PARALLEL_BATCHES               6
+2020-11-26 06:16:40,125 INFO     RELEASE                                   False
+2020-11-26 06:16:40,125 INFO     SAVE_EVERY_EPOCHS                         1
+2020-11-26 06:16:40,125 INFO     SAVE_T2V                                  None
+2020-11-26 06:16:40,126 INFO     SAVE_W2V                                  None
+2020-11-26 06:16:40,126 INFO     SEPARATE_OOV_AND_PAD                      False
+2020-11-26 06:16:40,126 INFO     SHUFFLE_BUFFER_SIZE                       10000
+2020-11-26 06:16:40,126 INFO     TARGET_EMBEDDINGS_SIZE                    384
+2020-11-26 06:16:40,126 INFO     TEST_BATCH_SIZE                           1024
+2020-11-26 06:16:40,126 INFO     TEST_DATA_PATH                            
+2020-11-26 06:16:40,126 INFO     TOKEN_EMBEDDINGS_SIZE                     128
+2020-11-26 06:16:40,126 INFO     TOP_K_WORDS_CONSIDERED_DURING_PREDICTION  10
+2020-11-26 06:16:40,126 INFO     TRAIN_BATCH_SIZE                          1024
+2020-11-26 06:16:40,127 INFO     TRAIN_DATA_PATH_PREFIX                    None
+2020-11-26 06:16:40,127 INFO     USE_TENSORBOARD                           False
+2020-11-26 06:16:40,127 INFO     VERBOSE_MODE                              1
+2020-11-26 06:16:40,127 INFO     _Config__logger                           <Logger code2vec (INFO)>
+2020-11-26 06:16:40,127 INFO     context_vector_size                       384
+2020-11-26 06:16:40,127 INFO     entire_model_load_path                    /home/aminabd/scratch/code2vec/../models/java14_model/saved_model_iter8.release__entire-model
+2020-11-26 06:16:40,127 INFO     entire_model_save_path                    None
+2020-11-26 06:16:40,127 INFO     is_loading                                True
+2020-11-26 06:16:40,127 INFO     is_saving                                 False
+2020-11-26 06:16:40,128 INFO     is_testing                                False
+2020-11-26 06:16:40,128 INFO     is_training                               False
+2020-11-26 06:16:40,128 INFO     model_load_dir                            /home/aminabd/scratch/code2vec/../models/java14_model
+2020-11-26 06:16:40,128 INFO     model_weights_load_path                   /home/aminabd/scratch/code2vec/../models/java14_model/saved_model_iter8.release__only-weights
+2020-11-26 06:16:40,128 INFO     model_weights_save_path                   None
+2020-11-26 06:16:40,128 INFO     test_steps                                0
+2020-11-26 06:16:40,128 INFO     train_data_path                           None
+2020-11-26 06:16:40,128 INFO     train_steps_per_epoch                     0
+2020-11-26 06:16:40,129 INFO     word_freq_dict_path                       None
+2020-11-26 06:16:40,129 INFO     ---------------------------------------------------------------------
+2020-11-26 06:16:40,130 INFO     Loading model vocabularies from: `/home/aminabd/scratch/code2vec/../models/java14_model/dictionaries.bin` ... 
+2020-11-26 06:16:43,251 INFO     Done loading model vocabularies.
+2020-11-26 06:16:44,928 INFO     Done creating code2vec model
+HERE WE ARE {'NUM_TRAIN_EPOCHS': 20, 'SAVE_EVERY_EPOCHS': 1, 'TRAIN_BATCH_SIZE': 1024, 'TEST_BATCH_SIZE': 1024, 'TOP_K_WORDS_CONSIDERED_DURING_PREDICTION': 10, 'NUM_BATCHES_TO_LOG_PROGRESS': 100, 'NUM_TRAIN_BATCHES_TO_EVALUATE': 1800, 'READER_NUM_PARALLEL_BATCHES': 6, 'SHUFFLE_BUFFER_SIZE': 10000, 'CSV_BUFFER_SIZE': 104857600, 'MAX_TO_KEEP': 10, 'MAX_CONTEXTS': 200, 'MAX_TOKEN_VOCAB_SIZE': 1301136, 'MAX_TARGET_VOCAB_SIZE': 261245, 'MAX_PATH_VOCAB_SIZE': 911417, 'DEFAULT_EMBEDDINGS_SIZE': 128, 'TOKEN_EMBEDDINGS_SIZE': 128, 'PATH_EMBEDDINGS_SIZE': 128, 'CODE_VECTOR_SIZE': 384, 'TARGET_EMBEDDINGS_SIZE': 384, 'DROPOUT_KEEP_RATE': 0.75, 'SEPARATE_OOV_AND_PAD': False, 'PREDICT': True, 'MODEL_SAVE_PATH': None, 'MODEL_LOAD_PATH': '/home/aminabd/scratch/code2vec/../models/java14_model/saved_model_iter8.release', 'TRAIN_DATA_PATH_PREFIX': None, 'TEST_DATA_PATH': '', 'RELEASE': False, 'EXPORT_CODE_VECTORS': False, 'SAVE_W2V': None, 'SAVE_T2V': None, 'VERBOSE_MODE': 1, 'LOGS_PATH': None, 'DL_FRAMEWORK': 'tensorflow', 'USE_TENSORBOARD': False, 'NUM_TRAIN_EXAMPLES': 0, 'NUM_TEST_EXAMPLES': 0, '_Config__logger': <Logger code2vec (INFO)>}
+2020-11-26 06:17:29,020 INFO     Initalized variables
+2020-11-26 06:17:29,042 INFO     Loading model weights from: /home/aminabd/scratch/code2vec/../models/java14_model/saved_model_iter8.release
+2020-11-26 06:17:34,222 INFO     Done loading model weights
+Starting interactive prediction...
+Modify the file: "Input.java" and press any key when ready, or "q" / "quit" / "exit" to exit
+Traceback (most recent call last):
+  File "/home/aminabd/scratch/code2vec/code2vec.py", line 42, in <module>
+    predictor.predict()
+  File "/scratch/aminabd/code2vec/interactive_predict.py", line 39, in predict
+    predict_lines, hash_to_string_dict = self.path_extractor.extract_paths(input_filename)
+  File "/scratch/aminabd/code2vec/extractor.py", line 14, in extract_paths
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/python/3.6.10/lib/python3.6/subprocess.py", line 729, in __init__
+    restore_signals, start_new_session)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/python/3.6.10/lib/python3.6/subprocess.py", line 1364, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'java': 'java'

@@ -5,3 +5,8 @@
 **/.idea/**
 *.tar.gz
 **/log.txt
+env/
+__pycache__/
+*slurm*
+tensorflow/
+tensorflow_gpu/
