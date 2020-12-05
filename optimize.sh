@@ -15,5 +15,6 @@ test_data=${data_dir}/${dataset_name}.val.c2v
 
 # mkdir -p ${model_dir}
 set -e
-python3 -u SMAC4vec.py --data ${data} --test ${test_data} 
+echo "RUNNING SMAC4vec"
+python3 SMAC4vec.py --data ${data} --test ${test_data} 
 #--save ${model_dir}/saved_model
