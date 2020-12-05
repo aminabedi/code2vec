@@ -4,27 +4,24 @@ Optimize the hyperparameters of code2vec
 ========================================================
 """
 
-import logging
-
+print("GO")
 import numpy as np
+print("NUMPY imported")
 from ConfigSpace.conditions import InCondition
 from ConfigSpace.hyperparameters import CategoricalHyperparameter, \
     UniformFloatHyperparameter, UniformIntegerHyperparameter
-# from sklearn import svm, datasets
-# from sklearn.model_selection import cross_val_score
-
+print("CONFIG imports done")
 # Import ConfigSpace and different types of parameters
 from smac.configspace import ConfigurationSpace
 from smac.facade.smac_hpo_facade import SMAC4HPO
+
 # Import SMAC-utilities
 from smac.scenario.scenario import Scenario
-
+print("SMAC imports done")
 # Import Code2vec model and config class
 from tensorflow_model import Code2VecModel
 from config import Config
-
-logging.basicConfig(level=logging.INFO)  # logging.DEBUG for debug output
-logger = logging.getLogger("SMAC4vec")
+print("IMPORTS DONE")
 
 def vec_from_cfg(cfg):
     """ Creates a C2V instance based on a configuration and evaluates it on the
@@ -76,11 +73,11 @@ cs.add_hyperparameter(DROPOUT_KEEP_RATE)
 
 # There are some hyperparameters shared by all kernels
 
-
+print("ConfigSpace has been setup")
 
 # Scenario object
 scenario = Scenario({"run_obj": "quality",  # we optimize quality (alternatively runtime)
-                     "runcount-limit": 100,  # max. number of function evaluations; for this example set to a low number
+                     "runcount-limit": 50,  # max. number of function evaluations; for this example set to a low number
                      "cs": cs,  # configuration space
                      "deterministic": "true"
                      })
