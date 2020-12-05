@@ -1,5 +1,6 @@
 *.class
 *.lst
+.DS_Store
 **/models/**
 **/data/**
 **/.idea/**
@@ -10,3 +11,4 @@ __pycache__/
 *slurm*
 tensorflow/
 tensorflow_gpu/
+java-small/

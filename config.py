@@ -57,17 +57,17 @@ class Config:
         self.MAX_TO_KEEP = 10
 
         # model hyper-params
-        self.MAX_CONTEXTS = 200
-        self.MAX_TOKEN_VOCAB_SIZE = 1301136
-        self.MAX_TARGET_VOCAB_SIZE = 261245
-        self.MAX_PATH_VOCAB_SIZE = 911417
-        self.DEFAULT_EMBEDDINGS_SIZE = 128
+        # self.MAX_CONTEXTS = 200
+        # self.MAX_TOKEN_VOCAB_SIZE = 1301136
+        # self.MAX_TARGET_VOCAB_SIZE = 261245
+        # self.MAX_PATH_VOCAB_SIZE = 911417
+        # self.DEFAULT_EMBEDDINGS_SIZE = 128
         self.TOKEN_EMBEDDINGS_SIZE = self.DEFAULT_EMBEDDINGS_SIZE
         self.PATH_EMBEDDINGS_SIZE = self.DEFAULT_EMBEDDINGS_SIZE
         self.CODE_VECTOR_SIZE = self.context_vector_size
         self.TARGET_EMBEDDINGS_SIZE = self.CODE_VECTOR_SIZE
-        self.DROPOUT_KEEP_RATE = 0.75
-        self.SEPARATE_OOV_AND_PAD = False
+        # self.DROPOUT_KEEP_RATE = 0.75
+        # self.SEPARATE_OOV_AND_PAD = False
 
     def load_from_args(self):
         args = self.arguments_parser().parse_args()
@@ -86,7 +86,7 @@ class Config:
         self.DL_FRAMEWORK = 'tensorflow' if not args.dl_framework else args.dl_framework
         self.USE_TENSORBOARD = args.use_tensorboard
 
-    def __init__(self, set_defaults: bool = False, load_from_args: bool = False, verify: bool = False):
+    def __init__(self, set_defaults: bool = False, load_from_args: bool = False, verify: bool = False, hyper_params: dict = None):
         self.NUM_TRAIN_EPOCHS: int = 0
         self.SAVE_EVERY_EPOCHS: int = 0
         self.TRAIN_BATCH_SIZE: int = 0
@@ -100,17 +100,17 @@ class Config:
         self.MAX_TO_KEEP: int = 0
 
         # model hyper-params
-        self.MAX_CONTEXTS: int = 0
-        self.MAX_TOKEN_VOCAB_SIZE: int = 0
-        self.MAX_TARGET_VOCAB_SIZE: int = 0
-        self.MAX_PATH_VOCAB_SIZE: int = 0
-        self.DEFAULT_EMBEDDINGS_SIZE: int = 0
+        self.MAX_CONTEXTS: int = hyper_params["MAX_CONTEXT"] 
+        self.MAX_TOKEN_VOCAB_SIZE: int = hyper_params["MAX_TOKEN_VOCAB_SIZE"] 
+        self.MAX_TARGET_VOCAB_SIZE: int = hyper_params["MAX_TARGET_VOCAB_SIZE"] 
+        self.MAX_PATH_VOCAB_SIZE: int = hyper_params["MAX_PATH_VOCAB_SIZE"] 
+        self.DEFAULT_EMBEDDINGS_SIZE: int = hyper_params["DEFAULT_EMBEDDINGS_SIZE"] 
         self.TOKEN_EMBEDDINGS_SIZE: int = 0
         self.PATH_EMBEDDINGS_SIZE: int = 0
         self.CODE_VECTOR_SIZE: int = 0
         self.TARGET_EMBEDDINGS_SIZE: int = 0
-        self.DROPOUT_KEEP_RATE: float = 0
-        self.SEPARATE_OOV_AND_PAD: bool = False
+        self.DROPOUT_KEEP_RATE: float = hyper_params["DROPOUT_KEEP_RATE"] 
+        self.SEPARATE_OOV_AND_PAD: bool = hyper_params["SEPARATE_OOV_AND_PAD"] 
 
         # Automatically filled by `args`.
         self.PREDICT: bool = False   # TODO: update README;
