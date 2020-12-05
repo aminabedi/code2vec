@@ -10,3 +10,4 @@ __pycache__/
 *slurm*
 tensorflow/
 tensorflow_gpu/
+tensorflow_disabled/
