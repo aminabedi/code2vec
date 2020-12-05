@@ -45,7 +45,7 @@ def vec_from_cfg(cfg):
     cfg["DEFAULT_EMBEDDINGS_SIZE"] = 2**cfg["DEFAULT_EMBEDDINGS_SIZE"]
     print("CFG", cfg)
 
-    config = Config(set_defaults=True, load_from_args=True, verify=False, hyper_params=cfg)
+    config = Config(set_defaults=True, load_from_args=True, verify=True, hyper_params=cfg)
     
     model = Code2VecModel(config)
     model.train()
@@ -93,11 +93,11 @@ print("Default Value: %.2f" % (def_value))
 # Optimize, using a SMAC-object
 print("Optimizing! Depending on your machine, this might take a few minutes.")
 smac = SMAC4HPO(scenario=scenario, rng=np.random.RandomState(42),
-                tae_runner=svm_from_cfg)
+                tae_runner=vec_from_cfg)
 
 incumbent = smac.optimize()
 
-inc_value = svm_from_cfg(incumbent)
+inc_value = vec_from_cfg(incumbent)
 
 print("Optimized Value: %.2f" % (inc_value))
 

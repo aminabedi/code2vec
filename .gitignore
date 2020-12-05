@@ -11,5 +11,7 @@ __pycache__/
 *slurm*
 tensorflow/
 tensorflow_gpu/
-java-small/
+data/
+models/
+model/
 tensorflow_disabled/
