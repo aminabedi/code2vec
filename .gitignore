@@ -12,3 +12,4 @@ __pycache__/
 tensorflow/
 tensorflow_gpu/
 java-small/
+tensorflow_disabled/
