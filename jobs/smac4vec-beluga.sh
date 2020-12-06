@@ -1,13 +1,13 @@
 #!/bin/bash
-#SBATCH --time=01:00:00
-#SBATCH --gres=gpu:v100l:2
+#SBATCH --time=48:00:00
+#SBATCH --gres=gpu:v100:4
 #SBATCH --account=def-hemmati-ab
-#SBATCH --job-name=smac-code2vec-java-small
+#SBATCH --job-name=smac4vec-beluga
 #SBATCH --mail-user=mohammadamin.abedi@ucalgary.ca
 #SBATCH --mail-type=END
 #SBATCH --mail-type=BEGIN
-#SBATCH --cpus-per-task=32
-#SBATCH --mem=187GB
+#SBATCH --cpus-per-task=40
+#SBATCH --mem=186GB
 module restore modules_ok
 module load java
 wd="/home/aminabd/scratch/code2vec"

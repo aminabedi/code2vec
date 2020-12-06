@@ -22,6 +22,19 @@ print("SMAC imports done")
 from tensorflow_model import Code2VecModel
 from config import Config
 print("IMPORTS DONE")
+import os, shutil
+def cleanup(cfg):
+    folders = [cfg.MODEL_SAVE_PATH]
+    for folder in folders:
+        for filename in os.listdir(folder):
+            file_path = os.path.join(folder, filename)
+                try:
+                    if os.path.isfile(file_path) or os.path.islink(file_path):
+                        os.unlink(file_path)
+                    elif os.path.isdir(file_path):
+                        shutil.rmtree(file_path)
+                except Exception as e:
+                    print('Failed to delete %s. Reason: %s' % (file_path, e))
 
 def vec_from_cfg(cfg):
     """ Creates a C2V instance based on a configuration and evaluates it on the
@@ -43,9 +56,10 @@ def vec_from_cfg(cfg):
     print("CFG", cfg)
 
     config = Config(set_defaults=True, load_from_args=True, verify=True, hyper_params=cfg)
-    
+
     model = Code2VecModel(config)
     model.train()
+    cleanup(cfg)
     return model.evaluate().subtoken_f1  # Maximize!
 
 
@@ -77,10 +91,10 @@ print("ConfigSpace has been setup")
 
 # Scenario object
 scenario = Scenario({"run_obj": "quality",  # we optimize quality (alternatively runtime)
-                     "runcount-limit": 50,  # max. number of function evaluations; for this example set to a low number
-                     "cs": cs,  # configuration space
-                     "deterministic": "true"
-                     })
+    "runcount-limit": 50,  # max. number of function evaluations; for this example set to a low number
+    "cs": cs,  # configuration space
+    "deterministic": "true"
+    })
 
 # Example call of the function
 # It returns: Status, Cost, Runtime, Additional Infos
@@ -90,7 +104,7 @@ print("Default Value: %.2f" % (def_value))
 # Optimize, using a SMAC-object
 print("Optimizing! Depending on your machine, this might take a few minutes.")
 smac = SMAC4HPO(scenario=scenario, rng=np.random.RandomState(42),
-                tae_runner=vec_from_cfg)
+        tae_runner=vec_from_cfg)
 
 incumbent = smac.optimize()
 
@@ -100,6 +114,6 @@ print("Optimized Value: %.2f" % (inc_value))
 
 # We can also validate our results (though this makes a lot more sense with instances)
 smac.validate(config_mode='inc',  # We can choose which configurations to evaluate
-              # instance_mode='train+test',  # Defines what instances to validate
-              repetitions=100,  # Ignored, unless you set "deterministic" to "false" in line 95
-              n_jobs=1)  # How many cores to use in parallel for optimization
+        # instance_mode='train+test',  # Defines what instances to validate
+        repetitions=100,  # Ignored, unless you set "deterministic" to "false" in line 95
+        n_jobs=1)  # How many cores to use in parallel for optimization
