@@ -56,10 +56,10 @@ def vec_from_cfg(cfg):
     print("CFG", cfg)
 
     config = Config(set_defaults=True, load_from_args=True, verify=True, hyper_params=cfg)
-
+    cleanup(config)
     model = Code2VecModel(config)
     model.train()
-    cleanup(cfg)
+    cleanup(config)
     return model.evaluate().subtoken_f1  # Maximize!
 
 
