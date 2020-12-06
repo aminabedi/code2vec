@@ -25,6 +25,7 @@ print("IMPORTS DONE")
 import os, shutil
 def cleanup(cfg):
     folders = [cfg.MODEL_SAVE_PATH]
+    folders = [("/".join(x.split('/')[:-1]) + '/') for x in folders]
     for folder in folders:
         for filename in os.listdir(folder):
             file_path = os.path.join(folder, filename)
